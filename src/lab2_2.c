@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 /*
@@ -25,7 +26,11 @@ int main(void) {
   int n;
 
   printf("Enter a non-negative integer n: ");
-  scanf("%d", &n);
+
+  if (scanf("%d", &n) != 1) {
+    printf("Error: invalid input.\n");
+    return 1;
+  }
 
   if (n < 0) {
     printf("Error: n must be non-negative.\n");

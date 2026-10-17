@@ -1,3 +1,4 @@
+
 #include <math.h>
 #include <stdio.h>
 
@@ -30,7 +31,11 @@ int main(void) {
   int n;
 
   printf("Enter an integer n (>= 2): ");
-  scanf("%d", &n);
+
+  if (scanf("%d", &n) != 1) {
+    printf("Error: invalid input.\n");
+    return 1;
+  }
 
   if (n < 2) {
     printf("Error: n must be at least 2.\n");
